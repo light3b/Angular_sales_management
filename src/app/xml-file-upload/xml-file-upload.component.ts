@@ -5,10 +5,8 @@ import { read, utils, writeFile } from 'xlsx';
 
 @Component({
   selector: 'app-xml-file-upload',
-  standalone: true,
-  imports: [],
   templateUrl: './xml-file-upload.component.html',
-  styleUrl: './xml-file-upload.component.css'
+  styleUrls: ['./xml-file-upload.component.css']
 })
 
 @Injectable()
@@ -35,56 +33,56 @@ export class XmlFileUploadComponent implements  AfterViewInit {
   }
 
   // On file Select
-  // onChange(event: any) {
-  //   const file: File = event.target.files[0];
+  onChange(event: any) {
+    const file: File = event.target.files[0];
 
-  //   if (file) {
-  //     this.status = "initial";
-  //     this.file = file;
-  //     this.excelfile.emit(file);
-  //     this.outXmlUrl(this.makeXmlUrl());
-  //     // this.onUpload();
-  //   }
+    if (file) {
+      this.status = "initial";
+      this.file = file;
+      this.excelfile.emit(file);
+      this.outXmlUrl(this.makeXmlUrl());
+      // this.onUpload();
+    }
 
-  //   this.clearInputValue();
-  // }
+    this.clearInputValue();
+  }
 
-  // clearInputValue(){
-  //   const element = this.inputbutton.nativeElement;
-  //   this.renderer.selectRootElement(element).value = '';
-  // }
+  clearInputValue(){
+    const element = this.inputbutton.nativeElement;
+    this.renderer.selectRootElement(element).value = '';
+  }
 
-  // outXmlUrl(url: string){
-  //   console.log('outxmlurl = ', url);
-  //   this.xmlurl.emit(url);
-  // }
+  outXmlUrl(url: string){
+    console.log('outxmlurl = ', url);
+    this.xmlurl.emit(url);
+  }
 
-  // makeXmlUrl(): string{
-  //   const url : string = this.file?.name ?? '';
-  //   return url;
-  // }
+  makeXmlUrl(): string{
+    const url : string = this.file?.name ?? '';
+    return url;
+  }
 
-  // onUpload() {
-  //   if (this.file) {
-  //     const formData = new FormData();
+  onUpload() {
+    if (this.file) {
+      const formData = new FormData();
 
-  //     formData.append('file', this.file, this.file.name);
+      formData.append('file', this.file, this.file.name);
 
-  //     const upload$ = this.http.post("http://localhost:8000/xml/upload.php", formData);
+      const upload$ = this.http.post("http://localhost:8000/xml/upload.php", formData);
 
-  //     this.status = 'uploading';
+      this.status = 'uploading';
 
-  //     upload$.subscribe({
-  //       next: () => {
-  //         this.status = 'success';
+      upload$.subscribe({
+        next: () => {
+          this.status = 'success';
 
-  //         this.outXmlUrl(this.makeXmlUrl());
-  //       },
-  //       error: (error: any) => {
-  //         this.status = 'fail';
-  //         return throwError(() => error);
-  //       },
-  //     });
-  //   }
-  // }
+          this.outXmlUrl(this.makeXmlUrl());
+        },
+        error: (error: any) => {
+          this.status = 'fail';
+          return throwError(() => error);
+        },
+      });
+    }
+  }
 }

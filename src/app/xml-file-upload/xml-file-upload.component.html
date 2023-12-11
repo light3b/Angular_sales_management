@@ -1,25 +1,29 @@
 <!-- <h2>Import Xml</h2> -->
 <div class="xml-import" (click) = "onSelectFile()">
-    <!-- <input #xmlinput type="file" accept=".xml, .xlsx" class="file-input" (change)="onChange($event)" #fileUpload /> -->
-    <!-- <div *ngIf="file" class="xml-form">
-      <section class="file-info">
-        File details:
-        <ul>
-          <li>Name: {{file.name}}</li>
-          <li>Type: {{file.type}}</li>
-          <li>Size: {{file.size}} bytes</li>
-        </ul>
-      </section>
-  
-      <button (click)="onUpload()">Upload the file</button>
-  
-      <section [ngSwitch]="status">
-        <p *ngSwitchCase="'uploading'">⏳ Uploading...</p>
-        <p *ngSwitchCase="'success'">✅ Done!</p>
-        <p *ngSwitchCase="'fail'">❌ Error!</p>
-        <p *ngSwitchDefault>😶 Waiting to upload...</p>
-      </section>
-    </div> -->
-  </div>
-  
-  
+  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+      アップロード
+      <input #xmlinput type="file" accept=".xml, .xlsx" class="file-input" (change)="onChange($event)" #fileUpload />
+      <div *ngIf="file" class="xml-form">
+        <section class="file-info">
+          File details:
+          <ul>
+            <li>Name: {{file.name}}</li>
+            <li>Type: {{file.type}}</li>
+            <li>Size: {{file.size}} bytes</li>
+          </ul>
+        </section>
+
+        <button (click)="onUpload()">Upload the file</button>
+
+        <section [ngSwitch]="status">
+          <p *ngSwitchCase="'uploading'">⏳ Uploading...</p>
+          <p *ngSwitchCase="'success'">✅ Done!</p>
+          <p *ngSwitchCase="'fail'">❌ Error!</p>
+          <p *ngSwitchDefault>😶 Waiting to upload...</p>
+        </section>
+      </div>
+    </span>
+  </button>
+</div>
+

@@ -1,0 +1,30 @@
+
+.content{
+  /* float: right; */
+  /* width: 86%; */
+  width: 100%;
+  height: auto;
+  margin: 2px;
+  padding: 0px;
+}
+
+.xlsx{
+  width: calc(100% - 6px);
+  height: auto;
+  margin: 0px 0px;
+  border: 1px solid #1f1f1f;
+  overflow: auto;
+}
+
+.content ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.content ul li{
+  list-style-type: none;
+  border: 1px solid #1f1f1f;
+  padding: 0px 10px;
+}

@@ -1,0 +1,21 @@
+<div class="content">
+  <h2 *ngIf="xmlurl">IMPORT: {{xmlurl}}</h2>
+  <!-- <ul>
+    <li *ngFor="let tbl of excelhtml">
+      <div class="xlsx" [innerHTML]="tbl"></div>
+    </li>
+  </ul> -->
+
+  <ul>
+    <li *ngFor="let sheet of excelSheets let i = index" (click) = "onClickSheet(i)">
+      <div>{{sheet.name}}</div>
+    </li>
+  </ul>
+
+  <div [ngSwitch]="selectSheet">
+    <ng-container *ngFor="let sheet of excelSheets; let i = index">
+      <div #tablenode *ngSwitchCase= i class="xlsx" [innerHTML]="sheet.html"></div>
+    </ng-container>
+  </div>
+
+</div>

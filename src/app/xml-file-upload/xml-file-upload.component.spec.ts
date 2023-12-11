@@ -6,12 +6,10 @@ describe('XmlFileUploadComponent', () => {
   let component: XmlFileUploadComponent;
   let fixture: ComponentFixture<XmlFileUploadComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [XmlFileUploadComponent]
-    })
-    .compileComponents();
-    
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [XmlFileUploadComponent]
+    });
     fixture = TestBed.createComponent(XmlFileUploadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

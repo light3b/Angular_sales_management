@@ -4,10 +4,8 @@ import { ExcelSheet } from '../excel-sheets';
 
 @Component({
   selector: 'app-xml-file-export',
-  standalone: true,
-  imports: [],
   templateUrl: './xml-file-export.component.html',
-  styleUrl: './xml-file-export.component.css'
+  styleUrls: ['./xml-file-export.component.css']
 })
 export class XmlFileExportComponent {
   @Input() tblelements: any;
@@ -25,4 +23,3 @@ export class XmlFileExportComponent {
     XLSX.writeFile(workBook,'SheetJS.xlsx');
   }
 }
-

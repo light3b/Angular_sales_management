@@ -2,3 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+table{
+  width: 100%;
+}

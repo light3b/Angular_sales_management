@@ -6,12 +6,10 @@ describe('XmlFileExportComponent', () => {
   let component: XmlFileExportComponent;
   let fixture: ComponentFixture<XmlFileExportComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [XmlFileExportComponent]
-    })
-    .compileComponents();
-    
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [XmlFileExportComponent]
+    });
     fixture = TestBed.createComponent(XmlFileExportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
