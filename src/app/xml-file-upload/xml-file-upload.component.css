@@ -1,0 +1,19 @@
+.xml-import{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #62b9f3;
+  }
+  
+  .xml-import input
+  {
+    width: 0px;
+    height: 0px;
+  }
+  
+  .xml-form{
+    visibility: hidden;
+  }
+  
+  
+  
