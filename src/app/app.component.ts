@@ -27,9 +27,7 @@ export class AppComponent implements OnInit {
   excelfile: any;
   tblelements: any;
   excelSheets = [];
-
-  calendarPlugins = [listPlugin];
-  calendarWeekends = true;
+  calendarClassNames = ['bg-blue-500', 'text-white', 'text-center']
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -37,18 +35,18 @@ export class AppComponent implements OnInit {
     locales: [jaLocale],
     locale: 'ja',  // Set Japanese locale
     events: [
-      { title: '78900', date: '2023-11-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '12人', date: '2023-11-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '89500', date: '2023-12-05', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '15人', date: '2023-12-05', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '75300', date: '2023-12-11', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '11人', date: '2023-12-11', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '54800', date: '2023-12-20', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '8人', date: '2023-12-20', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '67100', date: '2023-12-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '10人', date: '2023-12-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '75300', date: '2024-01-03', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
-      { title: '11人', date: '2024-01-03', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '78900', date: '2023-11-30', classNames: [...this.calendarClassNames] },
+      { title: '12人', date: '2023-11-30', classNames: [...this.calendarClassNames] },
+      { title: '89500', date: '2023-12-05', classNames: [...this.calendarClassNames] },
+      { title: '15人', date: '2023-12-05', classNames: [...this.calendarClassNames] },
+      { title: '75300', date: '2023-12-11', classNames: [...this.calendarClassNames] },
+      { title: '11人', date: '2023-12-11', classNames: [...this.calendarClassNames] },
+      { title: '54800', date: '2023-12-20', classNames: [...this.calendarClassNames] },
+      { title: '8人', date: '2023-12-20', classNames: [...this.calendarClassNames] },
+      { title: '67100', date: '2023-12-30', classNames: [...this.calendarClassNames] },
+      { title: '10人', date: '2023-12-30', classNames: [...this.calendarClassNames] },
+      { title: '75300', date: '2024-01-03', classNames: [...this.calendarClassNames] },
+      { title: '11人', date: '2024-01-03', classNames: [...this.calendarClassNames] },
     ],
     eventOrder: () => 0
   };
