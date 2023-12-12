@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 // import { NgFor } from '@angular/common';
 import { ExcelSheet, Sheet } from './excel-sheets';
 import { initFlowbite } from "flowbite";
+import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
+import dayGridPlugin from '@fullcalendar/daygrid';
+import jaLocale from '@fullcalendar/core/locales/ja';
+import listPlugin from '@fullcalendar/list';
 
 interface Book{
   title: string;
@@ -23,6 +27,31 @@ export class AppComponent implements OnInit {
   excelfile: any;
   tblelements: any;
   excelSheets = [];
+
+  calendarPlugins = [listPlugin];
+  calendarWeekends = true;
+
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    plugins: [dayGridPlugin],
+    locales: [jaLocale],
+    locale: 'ja',  // Set Japanese locale
+    events: [
+      { title: '78900', date: '2023-11-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '12人', date: '2023-11-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '89500', date: '2023-12-05', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '15人', date: '2023-12-05', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '75300', date: '2023-12-11', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '11人', date: '2023-12-11', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '54800', date: '2023-12-20', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '8人', date: '2023-12-20', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '67100', date: '2023-12-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '10人', date: '2023-12-30', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '75300', date: '2024-01-03', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+      { title: '11人', date: '2024-01-03', classNames: ['bg-blue-500', 'text-white', 'text-center'] },
+    ],
+    eventOrder: () => 0
+  };
 
   ngOnInit(): void {
     initFlowbite();

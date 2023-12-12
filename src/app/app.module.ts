@@ -12,6 +12,8 @@ import { XmlFileViewComponent } from './xml-file-view/xml-file-view.component';
 import { XmlFileExportComponent } from './xml-file-export/xml-file-export.component';
 import { XmlToDatabaseComponent } from './xml-to-database/xml-to-database.component';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { XmlToDatabaseComponent } from './xml-to-database/xml-to-database.compon
     BrowserAnimationsModule,
     TestLocationModule,
     bookModule,
-    HttpClientModule
+    HttpClientModule,
+    FullCalendarModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

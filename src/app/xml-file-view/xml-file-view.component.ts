@@ -78,20 +78,20 @@ export class XmlFileViewComponent implements AfterViewInit{
         const sheets = xslx.SheetNames;
         console.log("sheets = ", sheets);
 
-        this.excelSheets = xslx.SheetNames.map(name => ({
-          name: name,
-          html: utils.sheet_to_html(xslx.Sheets[name])
-        }));
+        // this.excelSheets = xslx.SheetNames.map(name => ({
+        //   name: name,
+        //   html: utils.sheet_to_html(xslx.Sheets[name])
+        // }));
 
-        this.sheetsChanged.emit(this.excelSheets);
+        // this.sheetsChanged.emit(this.excelSheets);
 
-        // xslx.SheetNames.forEach(name => {
-        //   /* generate HTML from the corresponding worksheets */
-        //   const html = utils.sheet_to_html(xslx.Sheets[name]);
-        //   // console.log("xslx sheet = ", name, html);
-        //   /* add to state */
-        //   this.excelSheets.push({name: name, html: html});
-        // });
+        xslx.SheetNames.forEach(name => {
+          /* generate HTML from the corresponding worksheets */
+          const html = utils.sheet_to_html(xslx.Sheets[name]);
+          // console.log("xslx sheet = ", name, html);
+          /* add to state */
+          this.excelSheets.push({name: name, html: html});
+        });
       }
 
       reader.readAsArrayBuffer(this.excelfile);

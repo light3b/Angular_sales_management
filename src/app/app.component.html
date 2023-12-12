@@ -132,13 +132,23 @@
 
 <div class="p-4 sm:ml-64">
    <div class="content" role="main">
+
+      <div class="w-full flex flex-col lg:flex-row">
+         <div class="lg:w-1/2 w-full h-auto mt-10">
+            <full-calendar [options]="calendarOptions"></full-calendar>
+         </div>
+         <div class="lg:w-1/2 w-full h-auto">
+            
+         </div>
+      </div>
+
      <!-- <div class="xslxcontrol"> -->
-       <div class="inline-flex rounded-md shadow-sm mt-8" role="group">
+       <!-- <div class="inline-flex rounded-md shadow-sm mt-8" role="group">
          <app-xml-file-upload (xmlurl)="onChangeXmlUrl($event)"
            (excelfile)="onChangeExcelFile($event)"></app-xml-file-upload>
          <app-xml-file-export [tblelements]="tblelements"></app-xml-file-export>
          <app-xml-to-database [tblelements]="tblelements"></app-xml-to-database>
-       </div>
+       </div> -->
      <!-- </div> -->
 
      <!-- (click)="onClickSheet(i)" -->
@@ -151,8 +161,8 @@
          </li>
       </ul> -->
    
-     <app-xml-file-view (tblelementlist)="onChangeTblElement($event)" class="xslxsheet" [xmlurl]="xmlurl"
-       [excelfile]="excelfile"></app-xml-file-view>
+     <!-- <app-xml-file-view (tblelementlist)="onChangeTblElement($event)" class="xslxsheet" [xmlurl]="xmlurl"
+       [excelfile]="excelfile"></app-xml-file-view> -->
    </div>
 </div>
 
