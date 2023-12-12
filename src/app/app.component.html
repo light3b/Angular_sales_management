@@ -122,11 +122,17 @@
 
 <div class="p-4 sm:ml-64">
    <div class="content" role="main">
-
+      
       <div class="w-full flex flex-col xl:flex-row">
+
+         <!-- ////////////// - Fullcalendar Start - /////////////// -->
+
          <div class="xl:w-1/2 w-full h-auto mt-10 m-2">
             <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-               <full-calendar [options]="calendarOptions"></full-calendar>
+               <div class="relative">
+                  <full-calendar [options]="calendarOptions"></full-calendar>
+                  <div class="absolute w-full text-center text-md text-gray-600 mt-1 top-8">月別カレンダー</div>
+               </div>
             </div>
          </div>
          <div class="xl:w-1/2 w-full h-auto mt-10 m-2">

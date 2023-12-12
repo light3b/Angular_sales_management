@@ -31,6 +31,11 @@ export class AppComponent implements OnInit {
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
+    headerToolbar: {
+      start: 'prevYear,nextYear', // Custom buttons + Today button at the start
+      center: 'title', // Title in the center
+      end: 'prev,next' // Empty, or whatever controls you want
+    },
     plugins: [dayGridPlugin],
     locales: [jaLocale],
     locale: 'ja',  // Set Japanese locale
